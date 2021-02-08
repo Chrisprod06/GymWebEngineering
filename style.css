@@ -1,8 +1,42 @@
-.row {
-    display: flex;
-  }
+.header{
+  text-align: center;
   
-  .column {
-    flex: 33.33%;
-    padding: 5px;
-  }
+}
+
+.title{
+  margin: 15px;
+  padding: 15px;
+  
+}
+
+.menu-list{
+  list-style-type: none;
+}
+
+.left{
+  float: left;
+  margin-left:175px
+}
+.right{
+  float: right;
+  margin-right: 175px;
+}
+
+.center{
+  margin-top: 100px;
+}
+.menu{
+  display: inline;
+  text-align: center;
+}
+
+.image{
+  border-radius: 20%;
+}
+
+.menu-link{
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
+
