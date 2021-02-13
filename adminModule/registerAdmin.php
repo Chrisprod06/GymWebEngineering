@@ -13,7 +13,7 @@
        <div class="credentials-Container">   
             <h4 class="form-header ">Create Account Admin</h4>
             <div>
-                <form action="#">
+                <form action="registerFormAdmin.php" method="POST">
                     <label for="firstname">Firstname:</label><br>
                     <input type="text"class="credentials-input" name="firstname" id="firstname"><br>
                     <label for="lastname">Lastname:</label><br>
