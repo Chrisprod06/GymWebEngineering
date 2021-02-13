@@ -33,6 +33,22 @@ create table enrolledClasses(
     primary key (userID,classID),
     foreign key(userID) references users(userID),
     foreign key(classID) references classes(classID)
-)
+);
 
+create table contactQueries(
+	userID int auto_increment,
+    subject varchar(30),
+    message varchar(100),
+    
+    foreign key (userID) references users(userID)
+    );
+
+
+create table trainingClass(
+	classID varchar(20),
+    trainerID int auto_increment,
+    
+    foreign key (classID) references classes(classID),
+    foreign key (trainerID) references users(userID)
+);
 
