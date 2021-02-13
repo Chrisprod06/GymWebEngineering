@@ -41,9 +41,9 @@ hr.border{
 }
 
 .menu-button{
-  background-color: dimgray;
+  background-color: khaki;
   border:none;
-  color:white;
+  color:black;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -77,8 +77,51 @@ hr.border{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  padding: 50px 50px 100px 50px;
-  background: white;
+  padding: 50px 80px 100px 80px;
+  background: lightgray;
   border-radius: 10%;
+}
 
+.credentials-input{
+  padding:10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 300px;
+  font-size: medium;
+  border: none;
+}
+
+.credentials-button{
+  margin: 15px 0px 15px 0px;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 0px 30px 0px;
+  background-color: khaki;
+  cursor: pointer;
+  border:none;
+  color: black;
+  font-size:medium;
+  
+  
+}
+.credentials-link{
+  
+  background-color: rgb(245, 233, 127);
+  color:black;
+  padding :14px 25px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+.credentials-link:hover{
+  background-color: khaki;
+}
+
+.link-container{
+  padding-top: 10px;
+  padding-bottom: 12px;
 }

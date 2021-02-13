@@ -12,13 +12,22 @@
         <!--Login Form-->
        <div class="credentials-Container">   
             <h4 class="form-header ">Admin Login</h4>
-            <form action="#">
-                <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email"><br>
-                <label for="pass">Password:</label><br>
-                <input type="password" name="pass" id="pass"><br>
-                <input type="button" value="Login">
-            </form>                  
+            <div>
+                <form action="#">
+                    <label for="email">Email:</label><br>
+                    <input type="email"class="credentials-input" name="email" id="email"><br>
+                    <label for="pass">Password:</label><br>
+                    <input type="password" class="credentials-input" name="pass" id="pass"><br>
+                    <input type="button" class="credentials-button" value="Login">
+                </form>
+            </div>
+            <div class="link-container">
+                <a href="/forgotPassword.html" class= "credentials-link">Forgot Password?</a>
+            </div>
+            <div class="link-container">
+                <a href="registerAdmin.html" class="credentials-link">Create Account</a>              
+
+            </div>        
        </div>
 
        
