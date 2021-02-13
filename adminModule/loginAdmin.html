@@ -9,29 +9,22 @@
     </head>
     <body>
 
-
-        <!--Title-->
-        <div class="title">
-            <h1 class="header">Admin Login</h1>
-        </div>
-        
-        <hr>
-
         <!--Login Form-->
-        <form action="#">
-            <div class="loginContainer">
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
-            
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
-            
-                <button type="submit">Login</button>
-                <a href="/forgotPassword.html">Forgot password?</a>
-                <a href="/adminModule/registerAdmin.html">No account? Register.</a>
-            </div>
-                
-        </form>
+       <div class="login-parentContainer">
+           <div class="login-childContainer">
+            <h4>Admin Login</h4>
+            <form action="#">
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email"><br>
+                <label for="pass">Password:</label><br>
+                <input type="password" name="pass" id="pass"><br>
+                <input type="button" value="Login">
+            </form>
+           </div>
+                  
+       </div>
+
+       
 
         
     </body>

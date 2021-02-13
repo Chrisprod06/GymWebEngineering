@@ -1,42 +1,83 @@
+*{
+  box-sizing: border-box;
+}
+
+
+body{
+  background: darkslategray;
+
+}
+
+/*index page header*/
 .header{
-  text-align: center;
+  text-align: left;
+  color: white;
+  text-shadow: 2px 2px gray;
+  font-weight: bolder;
+  font-size: 22px;
+}
+hr.border{
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+/*Index page menu*/
+
+.menu-row:after{
   
-}
-
-.title{
-  margin: 15px;
-  padding: 15px;
+  content: "";
+  display: table;
+  clear: both;
   
-}
 
-.menu-list{
-  list-style-type: none;
 }
-
-.left{
+.menu-column{
+  margin-top: 250px;
   float: left;
-  margin-left:175px
-}
-.right{
-  float: right;
-  margin-right: 175px;
+  width: 33.33%;
+  padding: 10px;
+  display: grid;
+  justify-content: center;
 }
 
-.center{
-  margin-top: 100px;
-}
-.menu{
-  display: inline;
+.menu-button{
+  background-color: dimgray;
+  border:none;
+  color:white;
+  padding: 15px 32px;
   text-align: center;
-}
-
-.image{
-  border-radius: 20%;
-}
-
-.menu-link{
   text-decoration: none;
-  font-size: large;
   font-weight: bold;
+  display:inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.menu-button:hover {
+  box-shadow: 0 0 11px white; 
 }
 
+
+
+/*Add responsivness*/
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/*Login and register form*/
+.login-parentContainer{
+  
+  display:table; 
+  height:100%; 
+  margin: 300px auto;
+  vertical-align: middle;
+  
+}
+.login-childContainer{
+  
+  background: white;
+  display:table-cell; 
+  vertical-align:middle;
+}
