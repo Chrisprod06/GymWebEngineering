@@ -23,10 +23,10 @@
                     <label for="email">Email:</label><br>
                     <input type="email"class="credentials-input" name="email" id="email"><br>
                     <label for="pass">Password:</label><br>
-                    <input type="email"class="credentials-input" name="pass" id="pass"><br>
+                    <input type="password"class="credentials-input" name="pass" id="pass"><br>
                     <label for="rePass">Repeat Password:</label><br>
                     <input type="password" class="credentials-input" name="rePass" id="rePass"><br>
-                    <input type="button" class="credentials-button" value="Create Account">
+                    <input type="submit" class="credentials-button" value="Create Account">
                 </form>
             </div>
             <div class="link-container">

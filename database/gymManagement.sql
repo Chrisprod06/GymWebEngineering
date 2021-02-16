@@ -11,7 +11,7 @@ create table users(
     address varchar(30),
     email varchar (20),
     password varchar(20),
-    role varchar(10),
+    role int,
     
     primary key (userID)
     
