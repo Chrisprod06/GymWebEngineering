@@ -4,7 +4,7 @@ use  gym;
 /*Table creation*/
 
 create table users(
-	userID int auto_increment,
+    userID int auto_increment,
     firstName varchar(20),
     lastName varchar(20),
     telephone int,
@@ -12,8 +12,7 @@ create table users(
     email varchar (20),
     password varchar(20),
     role int,
-    
-    primary key (userID)
+   
     
 );
 
