@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>Admin Login | Gym</title>
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="../style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -18,7 +18,7 @@
                     <input type="email"class="credentials-input" name="email" id="email"><br>
                     <label for="pass">Password:</label><br>
                     <input type="password" class="credentials-input" name="pass" id="pass"><br>
-                    <input type="button" class="credentials-button" value="Login">
+                    <input type="submit" class="credentials-button" name = "submit" value="Login">
                 </form>
                 <?php
                     if(isset($_GET['error'])){
@@ -42,7 +42,7 @@
                 <a href="/forgotPassword.html" class= "credentials-link">Forgot Password?</a>
             </div>
             <div class="link-container">
-                <a href="registerAdmin.html" class="credentials-link">No account? Create Account</a>              
+                <a href="registerAdmin.php" class="credentials-link">No account? Create Account</a>              
 
             </div>        
        </div>

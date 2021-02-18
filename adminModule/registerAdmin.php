@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>Admin Login | Gym</title>
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="../style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -58,7 +58,7 @@
                 <a href="/forgotPassword.html" class= "credentials-link">Forgot Password?</a>
             </div>
             <div class="link-container">
-                <a href="loginAdmin.html" class="credentials-link">Already have an account? Login</a>              
+                <a href="loginAdmin.php" class="credentials-link">Already have an account? Login</a>              
 
             </div>        
        </div>

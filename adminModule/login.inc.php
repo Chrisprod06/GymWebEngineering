@@ -1,11 +1,12 @@
 <?php
 
 if(isset($_POST['submit'])){
+    
     $email = $_POST['email'];
     $password = $_POST['pass'];
 
     require_once 'dbh.inc.php';
-    require_once 'function.inc.php';
+    require_once 'functions.inc.php';
 
     //error handlers
     if(emptyInputLogin($email, $password)!== false){
@@ -18,8 +19,8 @@ if(isset($_POST['submit'])){
     }
 
     loginUser($conn,$email,$password);
-}
-else{
+}else{
     header('location: loginAdmin.php');
+    
     exit();
 }

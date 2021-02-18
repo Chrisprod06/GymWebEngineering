@@ -95,6 +95,7 @@ function emptyInputLogin($email, $password){
     return $result;
 }
 
+//function to login user
  function loginUser($conn,$email,$password){
 
     $uidExists = emailExists($conn, $email);
@@ -116,7 +117,7 @@ function emptyInputLogin($email, $password){
         $_SESSION['userID'] = $uidExists['userID'];
         $_SESSION['firstname'] = $uidExists['firstname'];
         $_SESSION['lastname'] = $uidExists['lastname'];
-        header('location: index.php');
+        header('location: indexAdmin.php');
         exit();
 
     }

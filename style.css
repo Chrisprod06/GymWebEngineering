@@ -125,3 +125,63 @@ hr.border{
   padding-top: 10px;
   padding-bottom: 12px;
 }
+
+/*Side Navbar*/
+
+/*Side navigation menu*/
+.sidenav{
+  height:100%; /*full height*/
+  width: 0%; /*by default width is 0 we change this with javascript*/
+  position: fixed; /*dont move*/
+  z-index: 1; /*stay on top*/
+  top: 0; /*stay at the top*/
+  left: 0; /*stay left*/
+  background-color: black;/*color is black*/
+  overflow-x: hidden;/*disable scroll*/
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+/*navigation menu links*/
+.sidenav a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/*change color when mouse hovers over the links*/
+.sidenav a:hover{
+  color:f1f1f1;
+}
+
+/*Position and style the close button (top right corner)*/
+.sidenav .closebtn{
+  position: absolute;
+  top:0;
+  right:25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/*Style page content*/
+#main{
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*Logout btn*/
+.logoutbtn{
+  position: absolute;
+  display: inline-block;
+  bottom: 10%;
+  
+}
