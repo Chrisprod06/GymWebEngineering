@@ -1,10 +1,10 @@
-    <?php
-        include_once 'navbar.php';
-    ?>
+    <!DOCTYPE html>
+    <html>
+        <head>
 
-    <div id="main">
-
-    </div>
+        </head>
+        <body>
+            
         
-    </body>
-</html>
+        </body>
+    </html>

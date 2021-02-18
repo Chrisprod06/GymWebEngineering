@@ -43,7 +43,7 @@ function emailExists($conn,$email){
     $sql = 'SELECT * FROM users WHERE email = ?;';
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header('location: registerAdmin.php?error=stmtfailed');
+        header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
         exit();
     }
     
@@ -70,7 +70,7 @@ function createUser($conn,$firstname,$lastname,$telephone,$address,$email,$passw
     $sql = 'INSERT INTO users (firstname, lastname, telephone, address, email, password, role ) VALUES (?,?,?,?,?,?,?);';
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header('location: registerAdmin.php?error=stmtfailed');
+        header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
         exit();
     }
     $hashedPassword = password_hash($password,PASSWORD_DEFAULT);
@@ -78,7 +78,7 @@ function createUser($conn,$firstname,$lastname,$telephone,$address,$email,$passw
     mysqli_stmt_bind_param($stmt,"ssisssi",$firstname, $lastname,$telephone, $address, $email, $hashedPassword, $role);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('location: registerAdmin.php?error=none');
+    header('location: ../adminModule/registerAdmin.php?error=none');
     exit();
 }
 
@@ -101,7 +101,7 @@ function emptyInputLogin($email, $password){
     $uidExists = emailExists($conn, $email);
 
     if($uidExists === false){
-        header('location: registerAdmin.php?error=wronglogin');
+        header('location: ../adminModule/registerAdmin.php?error=wronglogin');
         exit();
     }
 
@@ -109,7 +109,7 @@ function emptyInputLogin($email, $password){
     $checkPassword = password_verify($password,$passwordHashed);
 
     if($checkPassword === false){
-        header('location: login.php?error=wronglogin');
+        header('location: ../adminModule/login.php?error=wronglogin');
         exit();
     }
     else if($checkPassword === true){
@@ -117,7 +117,7 @@ function emptyInputLogin($email, $password){
         $_SESSION['userID'] = $uidExists['userID'];
         $_SESSION['firstname'] = $uidExists['firstname'];
         $_SESSION['lastname'] = $uidExists['lastname'];
-        header('location: indexAdmin.php');
+        header('location: ../adminModule/indexAdmin.php');
         exit();
 
     }

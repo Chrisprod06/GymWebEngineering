@@ -13,7 +13,7 @@
        <div class="credentials-Container">   
             <h4 class="form-header ">Admin Login</h4>
             <div>
-                <form action="login.inc.php" method= 'POST'>
+                <form action="../includes/login.inc.php" method= 'POST'>
                     <label for="email">Email:</label><br>
                     <input type="email"class="credentials-input" name="email" id="email"><br>
                     <label for="pass">Password:</label><br>
@@ -39,7 +39,7 @@
                 ?>
             </div>
             <div class="link-container">
-                <a href="/forgotPassword.html" class= "credentials-link">Forgot Password?</a>
+                <a href="../resetPassword.php" class= "credentials-link">Forgot Password?</a>
             </div>
             <div class="link-container">
                 <a href="registerAdmin.php" class="credentials-link">No account? Create Account</a>              

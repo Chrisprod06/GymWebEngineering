@@ -19,22 +19,22 @@ if(isset($_POST['submit'])){
 
     //error handlers
     if(emptyInputSignup($firstname, $lastname, $telephone,$address,$email, $password, $rePassword)!== false){
-        header('location: registerAdmin.php?error=emptyinput');
+        header('location: ../adminModule/registerAdmin.php?error=emptyinput');
         exit();
     }
     //need to create telephone function validation
 
     if(invalidEmail($email)!== false){
-        header('location: registerAdmin.php?error=invalidemail');
+        header('location: ../adminModule/registerAdmin.php?error=invalidemail');
         exit();
     }
 
     if(pwdMatch($password, $rePassword)!== false){
-        header('location: registerAdmin.php?error=passworddontmatch');
+        header('location: ../adminModule/registerAdmin.php?error=passworddontmatch');
         exit();
     }
     if(emailExists($conn,$email)!== false){
-        header('location: registerAdmin.php?error=emailExists');
+        header('location: ../adminModule/registerAdmin.php?error=emailExists');
         exit();
     }
 
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
     createUser($conn,$firstname,$lastname,$telephone,$address,$email,$password,$role);
 
 }else{
-    header('location: registerAdmin.php');
+    header('location: ../adminModule/registerAdmin.php');
     exit();
 }
 

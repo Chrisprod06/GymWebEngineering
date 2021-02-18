@@ -13,7 +13,7 @@
        <div class="credentials-Container">   
             <h4 class="form-header ">Create Account Admin</h4>
             <div>
-                <form action="signup.inc.php" method="POST">
+                <form action="../includes/signup.inc.php" method="POST">
                     <label for="firstname">Firstname:</label><br>
                     <input type="text"class="credentials-input" name="firstname" id="firstname"><br>
                     <label for="lastname">Lastname:</label><br>
@@ -55,7 +55,7 @@
                 ?>
             </div>
             <div class="link-container">
-                <a href="/forgotPassword.html" class= "credentials-link">Forgot Password?</a>
+                <a href="../resetPassword.html" class= "credentials-link">Forgot Password?</a>
             </div>
             <div class="link-container">
                 <a href="loginAdmin.php" class="credentials-link">Already have an account? Login</a>              
