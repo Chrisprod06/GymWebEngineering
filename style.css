@@ -34,7 +34,7 @@ hr.border{
 .menu-column{
   margin-top: 250px;
   float: left;
-  width: 33.33%;
+  width: 25%;
   padding: 10px;
   display: grid;
   justify-content: center;
@@ -61,7 +61,7 @@ hr.border{
 
 /*Add responsivness*/
 @media screen and (max-width: 600px) {
-  .column {
+  .menu-column {
     width: 100%;
   }
 }
@@ -185,3 +185,4 @@ hr.border{
   bottom: 10%;
   
 }
+

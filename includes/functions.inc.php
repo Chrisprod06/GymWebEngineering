@@ -109,7 +109,7 @@ function emptyInputLogin($email, $password){
     $checkPassword = password_verify($password,$passwordHashed);
 
     if($checkPassword === false){
-        header('location: ../adminModule/login.php?error=wronglogin');
+        header('location: ../adminModule/loginAdmin.php?error=wrongpassword');
         exit();
     }
     else if($checkPassword === true){

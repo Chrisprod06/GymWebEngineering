@@ -16,7 +16,7 @@
         <a href="manageTrainers.php">Trainers</a>
         <a href="manageClasses.php">Classes</a>
         <a href="contactUs.php">Queries</a>
-        <a href="logout.inc.php" class= "logoutbtn">Logout</a>
+        <a href="../includes/logout.inc.php" class= "logoutbtn">Logout</a>
     </div>
 
     <!--Open navbar-->
