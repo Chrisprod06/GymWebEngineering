@@ -40,6 +40,7 @@ hr.border{
   justify-content: center;
 }
 
+
 .menu-button{
   background-color: khaki;
   border:none;
@@ -136,7 +137,7 @@ hr.border{
   z-index: 1; /*stay on top*/
   top: 0; /*stay at the top*/
   left: 0; /*stay left*/
-  background-color: black;/*color is black*/
+  background-color:khaki;/*color is black*/
   overflow-x: hidden;/*disable scroll*/
   padding-top: 60px;
   transition: 0.5s;
@@ -147,14 +148,14 @@ hr.border{
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;;
-  color: #818181;
+  color: black;
   display: block;
   transition: 0.3s;
 }
 
 /*change color when mouse hovers over the links*/
 .sidenav a:hover{
-  color:f1f1f1;
+  color:darkgrey;
 }
 
 /*Position and style the close button (top right corner)*/
