@@ -1,3 +1,12 @@
+<!--PHP script that redirects to login if not signed in-->
+
+<?php
+    session_start();
+    if(!isset($_SESSION['userID'])){
+        header('location: loginAdmin.php');
+    }
+?>
+    
     <!DOCTYPE html>
     <html>
     <head>

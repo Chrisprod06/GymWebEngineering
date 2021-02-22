@@ -2,7 +2,7 @@
 
 //function for checking empty fields
 function emptyInputSignup($firstname, $lastname, $telephone,$address,$email, $password, $rePassword){
-    $result;
+    $result=false;
     if( empty($firstname)|| empty($lastname) || empty($telephone) ||empty($address) || empty($email) || empty($password) || empty($rePassword)){
         $result = true;
 
@@ -15,7 +15,7 @@ function emptyInputSignup($firstname, $lastname, $telephone,$address,$email, $pa
 
 //function for checking correct email
 function invalidEmail($email){
-    $result;
+    $result=false;
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $result = true;
     }
@@ -28,7 +28,7 @@ function invalidEmail($email){
 
 //function for checking if passwords are matching
 function pwdMatch($password,$rePassword){
-    $result;
+    $result=false;
     if($password!==$rePassword){
         $result = true;
     }
@@ -84,7 +84,7 @@ function createUser($conn,$firstname,$lastname,$telephone,$address,$email,$passw
 
 //empty input login
 function emptyInputLogin($email, $password){
-    $result;
+    $result=false;
     if( empty($email) || empty($password)){
         $result = true;
 
