@@ -20,7 +20,10 @@
         include_once 'navbar.php';
     ?>
 
-    <div id="main">
+    <div id="main" class = "main">
+
+        <!--Table to present data-->
+        <h2>Customers</h2>
         <table>
             <tr>
                 <th>UserID</th>
@@ -57,13 +60,36 @@
                         echo "<tr><td>" . $row["userID"]. "</td><td>" . $row["firstname"] . "</td><td>"
                         . $row["lastname"]. "</td><td>". $row['telephone']. "</td><td>". $row['address']. "</td><td>". $row['email']. "</td><td>". $role ."</td></tr>";
                     }
-                    //echo "</table>";
+                    echo "</table>";
                 }else{
                     echo "No results.";
                 }
-                exit();
+                
             ?>
         </table>
+
+        <!--Form to delete customer accounts-->
+        <h2>Add Customer</h2>
+        <form action="../includes/addCustomer.inc.php" method = "Post">
+            <label for="firstname">Firstname:</label><br>
+            <input type="text" name = "firstname"></input><br>
+            <label for="lastname">Lastname:</label><br>
+            <input type="text" name = "lastname"></input><br>
+            <label for="telephone">Telephone:</label><br>
+            <input type="int" name = "telephone"></input><br>
+            <label for="address">Address:</label><br>
+            <input type="int" name = "address"></input><br>
+            <label for="email">Email:</label><br>
+            <input type="email" name = "email"></input><br>
+            <input type="submit" value = "Add customer"><br>
+        </form>
+ 
+        <!--Form to add customer accounts-->
+        <h2>Remove Customer</h2>
+        <form action="../includes/removeCustomer.inc.php" method = "Post">
+        
+        </form>
+        
 
 
     </div>
