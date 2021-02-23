@@ -125,3 +125,56 @@ function emptyInputLogin($email, $password){
 
 }
 
+//function to create a random password
+function generatePassword(){
+
+    $passLength = 10;
+    $symbols = '~!@#$*%`?[]{};<>?.,_-()';
+    $symbolsCounter = strlen($symbols);
+    $randomPosition = mt_rand(0,$symbolsCounter - 1 );
+
+    $password = substr($symbols,$randomPosition,1);
+    $password = chr(mt_rand(48,57));
+    $password = chr(mt_rand(65,90));
+
+    while(strlen($password)<$passLength){
+        $password = chr(mt_rand(97,122));
+    }
+
+    $password = str_shuffle($password);
+    return $password;
+}
+
+//function to check if add customer form fields are empty
+function emptyAddCustomer($firstname,$lastname,$telephone,$address,$email){
+    $result = null;
+
+    if(empty($firstname) || empty($lastname) || empty($telephone) || empty($address) || empty($email)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+
+    return $result;
+}
+
+//function to add customer
+function addCustomer($conn,$firstname,$lastname,$telephone,$address,$email,$password,$role){
+
+    $sql = "INSERT INTO users(firstname, lastname, telephone, address, email, password, role ) Values(?,?,?,?,?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($conn,$stmt)){
+        header('Location: ../adminModule/manageCustomers.php?error=statementFailed');
+        exit();
+
+    $hashedPassword = password_hash($password,PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt,'ssisssi',$firstname,$lastname,$telephone,$address,$email,$password,$role);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header('Location: ../adminModule/manageCustomers.php?error=none');
+    exit();
+    }
+}
+

@@ -68,7 +68,7 @@
             ?>
         </table>
 
-        <!--Form to delete customer accounts-->
+        <!--Form to add customer accounts-->
         <h2>Add Customer</h2>
         <form action="../includes/addCustomer.inc.php" method = "Post">
             <label for="firstname">Firstname:</label><br>
@@ -81,16 +81,28 @@
             <input type="int" name = "address"></input><br>
             <label for="email">Email:</label><br>
             <input type="email" name = "email"></input><br>
-            <input type="submit" value = "Add customer"><br>
+            <input type="submit" name = "submitAddCustomer" value = "Add customer"><br>
         </form>
  
         <!--Form to add customer accounts-->
         <h2>Remove Customer</h2>
         <form action="../includes/removeCustomer.inc.php" method = "Post">
-        
+            <label for="users">Choose a user:</label>
+            <select name="users" id="users">
+                <option value=" "></option>
+                <!--PHP script to retrieve user ids to the list-->
+                <?php
+                    include_once '../includes/dbh.inc.php';
+                    $sql = "SELECT userID FROM users WHERE role=3;";
+                    $result = mysqli_query($conn,$sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo "<option value = ".$row['userID'].">". $row['userID']. "</option>";
+                    }
+                ?>    
+            </select>
+            <input type="submit" name ="submitRemoveCustomer" value = "Delete customer"><br>
         </form>
-        
-
 
     </div>
         
