@@ -37,7 +37,7 @@
             
                 include_once '../includes/dbh.inc.php';
         
-                $sql = "SELECT userID, firstname, lastname, telephone, address ,email, role FROM users WHERE role=3; ";
+                $sql = "SELECT userID, firstname, lastname, telephone, address ,email, role FROM users WHERE role=1; ";
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
 

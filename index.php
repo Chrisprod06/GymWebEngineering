@@ -29,7 +29,7 @@
             <a href="customerModule/loginCustomer.html" class="menu-button">Customer</a>  
     </div>
     <div class="menu-column"style="width:33.33%">   
-        <a href="trainerModule/loginTrainer.html" class="menu-button">Trainer</a>
+        <a href="trainerModule/loginTrainer.php" class="menu-button">Trainer</a>
     </div>
 </div>
 </body>
