@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <title>Admin Register | Gym</title>
+        <title>Trainer Register | Gym</title>
         <link rel="stylesheet" href="../style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -11,7 +11,7 @@
 
         <!--Register Form-->
        <div class="credentials-Container">   
-            <h4 class="form-header ">Create Account Admin</h4>
+            <h4 class="form-header ">Create Account Trainer</h4>
             <div>
                 <form action="../includes/signup.inc.php" method="POST">
                     <label for="firstname">Firstname:</label><br>
@@ -28,7 +28,7 @@
                     <input type="password"class="credentials-input" name="pass" id="pass"><br>
                     <label for="rePass">Repeat Password:</label><br>
                     <input type="password" class="credentials-input" name="rePass" id="rePass"><br>
-                    <input type="submit" name = "submit" class="credentials-button" value="Create Account">
+                    <input type="submit" name = "submitTrainer" class="credentials-button" value="Create Account">
                 </form>
                 <?php
                     if(isset($_GET['error'])){
@@ -58,7 +58,7 @@
                 <a href="../resetPassword.html" class= "credentials-link">Forgot Password?</a>
             </div>
             <div class="link-container">
-                <a href="loginAdmin.php" class="credentials-link">Already have an account? Login</a>              
+                <a href="loginTrainer.php" class="credentials-link">Already have an account? Login</a>              
 
             </div>        
        </div>
