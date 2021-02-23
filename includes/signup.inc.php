@@ -1,7 +1,7 @@
 <?php
 
 //check if user uses this script using the submit button else send them back
-if(isset($_POST['submit'])){
+if(isset($_POST['submitCreateAdmin']) || isset($_POST['submitCreateCustomer'])|| isset($_POST['submitCreateTrainer'])){
 
     //get data
     $firstname = $_POST['firstname'];
@@ -11,7 +11,16 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = $_POST['pass'];
     $rePassword = $_POST['rePass'];
-    $role = 1;
+
+    if(isset($_POST['submitCreateAdmin'])){
+        $role = 1;
+    }else if(isset($_POST['submitCreateTrainer'])){
+        $role = 2;
+    }else if(isset($_POST['submitCreateCustomer'])){
+        $role = 2;
+    }
+    
+    
 
     //requires
     require_once 'dbh.inc.php';
