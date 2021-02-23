@@ -5,6 +5,7 @@
         header('location: loginAdmin.php');
     }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
