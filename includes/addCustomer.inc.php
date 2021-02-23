@@ -9,7 +9,7 @@ if (isset($_POST['submitAddCustomer']) ){
     $telephone = $_POST['telephone'];
     $address = $_POST['address'];
     $email = $_POST['email'];
-    $password = generatePassword();
+    $password = "abc123";
     $role = 3;
 
     include_once '../includes/dbh.inc.php';
@@ -22,7 +22,7 @@ if (isset($_POST['submitAddCustomer']) ){
     }
 
     if(emptyAddCustomer($firstname,$lastname,$telephone,$address,$email) == true){
-        header('Location: ../includes/adminModule/manageCustomers.php?error=emptyAddCustomerInput');
+        header('Location: ../adminModule/manageCustomers.php?error=emptyAddCustomerInput');
         exit();
     }
 

@@ -40,7 +40,7 @@
             
                 include_once '../includes/dbh.inc.php';
         
-                $sql = "SELECT userID, firstname, lastname, telephone, address ,email, role FROM users WHERE role=1; ";
+                $sql = "SELECT userID, firstname, lastname, telephone, address ,email, role FROM users WHERE role=3; ";
                 $result = mysqli_query($conn, $sql);
                 $resultCheck = mysqli_num_rows($result);
 
@@ -70,7 +70,7 @@
 
         <!--Form to add customer accounts-->
         <h2>Add Customer</h2>
-        <form action="../includes/addCustomer.inc.php" method = "Post">
+        <form action="../includes/addCustomer.inc.php" method = "POST">
             <label for="firstname">Firstname:</label><br>
             <input type="text" name = "firstname"></input><br>
             <label for="lastname">Lastname:</label><br>
@@ -86,7 +86,7 @@
  
         <!--Form to add customer accounts-->
         <h2>Remove Customer</h2>
-        <form action="../includes/removeCustomer.inc.php" method = "Post">
+        <form action="../includes/removeCustomer.inc.php" method = "POST">
             <label for="users">Choose a user:</label>
             <select name="users" id="users">
                 <option value=" "></option>

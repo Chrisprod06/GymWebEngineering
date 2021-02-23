@@ -67,6 +67,11 @@
                     exit();
                 ?>
             </table>
+
+            <!--Form to add new classes-->
+            <form action="../includes/createClass.inc.php" method = "POST">
+            
+            </form>
     </div>
         
     </body>

@@ -161,20 +161,34 @@ function emptyAddCustomer($firstname,$lastname,$telephone,$address,$email){
 
 //function to add customer
 function addCustomer($conn,$firstname,$lastname,$telephone,$address,$email,$password,$role){
-
-    $sql = "INSERT INTO users(firstname, lastname, telephone, address, email, password, role ) Values(?,?,?,?,?,?,?);";
+    $sql = 'INSERT INTO users (firstname, lastname, telephone, address, email, password, role ) VALUES (?,?,?,?,?,?,?);';
     $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($conn,$stmt)){
-        header('Location: ../adminModule/manageCustomers.php?error=statementFailed');
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header('location: ../adminModule/manageCustomers.php?error=stmtfailed');
         exit();
-
+    }
     $hashedPassword = password_hash($password,PASSWORD_DEFAULT);
-
-    mysqli_stmt_bind_param($stmt,'ssisssi',$firstname,$lastname,$telephone,$address,$email,$password,$role);
+    
+    mysqli_stmt_bind_param($stmt,"ssisssi",$firstname, $lastname,$telephone, $address, $email, $hashedPassword, $role);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('Location: ../adminModule/manageCustomers.php?error=none');
+    header('location: ../adminModule/manageCustomers.php?error=none');
     exit();
-    }
 }
+
+function removeCustomer($conn,$userID){
+    $sql = 'DELETE FROM users WHERE userID = ?';
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header('location: ../adminModule/manageCustomers.php?error=stmtfailed');
+        exit();
+    }
+    
+    mysqli_stmt_bind_param($stmt,"i",$userID);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header('location: ../adminModule/manageCustomers.php?error=none');
+    exit();
+}
+
 
