@@ -20,7 +20,7 @@
             
         <!--Header-->
         <div class="header">
-            <h1>Welcome! </h1>
+            <h1>Welcome <?php echo $_SESSION['firstname']." ". $_SESSION["lastname"] ."!";?> </h1>
             
         </div>
         <hr class="border">

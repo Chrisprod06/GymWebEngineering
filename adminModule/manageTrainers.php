@@ -21,7 +21,11 @@
     ?>
 
     <div id="main">
-        <table>
+    <div class="dataTableContainer">     
+            <h2 class = "manageHeader">Trainers</h2>
+            <div class="dataTable">
+            <hr class ="border">
+            <table>
                 <tr>
                     <th>UserID</th>
                     <th>Firstname</th>
@@ -34,8 +38,9 @@
 
                 <!--PHP script to load data from users table-->
                 <?php
+                
                     include_once '../includes/dbh.inc.php';
-                    
+            
                     $sql = "SELECT userID, firstname, lastname, telephone, address ,email, role FROM users WHERE role=2; ";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
@@ -56,13 +61,15 @@
                             echo "<tr><td>" . $row["userID"]. "</td><td>" . $row["firstname"] . "</td><td>"
                             . $row["lastname"]. "</td><td>". $row['telephone']. "</td><td>". $row['address']. "</td><td>". $row['email']. "</td><td>". $role ."</td></tr>";
                         }
-                        //echo "</table>";
+                        echo "</table>";
                     }else{
                         echo "No results.";
                     }
-                    exit();
+                    
                 ?>
             </table>
+            </div>     
+        </div>
 
     </div>
         

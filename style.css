@@ -18,6 +18,8 @@ body{
 }
 hr.border{
   border: 3px solid white;
+  margin-top: 15px;
+  margin-bottom: 15px;
   border-radius: 5px;
 }
 
@@ -187,3 +189,68 @@ hr.border{
   
 }
 
+/*Manage*/
+.dataTableContainer{
+  overflow-x:auto
+}
+.manageHeader{
+  color: white;
+}
+
+/*Customers table*/
+.dataTable{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dataTable td{
+  border: 1px solid #ddd;
+  padding:8px;
+  text-align: left;
+}
+.dataTable th{
+  border: 1px solid #ddd;
+  padding:8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:white;
+}
+.dataTable tr{
+  background-color: khaki;
+}
+
+.dataTable tr:hover{
+  background-color: #ddd;
+}
+
+.addCustomerForm{
+  position: relative;
+  padding: 20px 80px 20px 80px;
+  background: lightgray;
+  border-radius: 10%;
+  width: 370px;
+
+}
+
+.addCustomerFormInput{
+  width: 200px;
+  border: none;
+  padding: 5px 7px 5px 7px;
+
+}
+
+.addCustomerFormButton{
+  margin: 15px 0px 15px 0px;
+  width: 95%;
+  height: 35px;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 0px 30px 0px;
+  background-color: khaki;
+  cursor: pointer;
+  border:none;
+  color: black;
+  font-size:medium;
+}
