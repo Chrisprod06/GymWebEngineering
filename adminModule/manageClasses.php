@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ManageClasses | Gym</title>
+        <title>Manage Classes | Gym</title>
         <link rel="stylesheet" href="../style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="../myScripts.js"></script>
@@ -78,7 +78,7 @@
             <!--Form to add classes-->
             <h2 class = "manageHeader">Add Class</h2>
             <hr class ="border">
-            <form class = "addCustomerForm" action="../includes/addCustomer.inc.php" method = "POST">
+            <form class = "addCustomerForm" action="../includes/addClass.inc.php" method = "POST">
                 <label for="className">Class Name:</label><br>
                 <input class = "addCustomerFormInput" type="text" name = "className"></input><br>
                 <label for="day">Day:</label>
@@ -99,15 +99,20 @@
                 <label for="address">Address:</label><br>
                 <input class = "addCustomerFormInput" type="int" name = "address"></input><br>
                 <label for="email">Trainer ID:</label><br>
-                <select name="trainerID" id="trainerID">
+                <select class = "addCustomerFormInput" name="trainerID" id="trainerID">
                     <option value="null"></option>
                     <!--PHP script to get trainers from database-->
                     <?php
-                    
-                    
-                    ?>
+                    include_once '../includes/dbh.inc.php';
+                    $sql = "SELECT userID, firstname, lastname FROM users WHERE role=2;";
+                    $result = mysqli_query($conn,$sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo "<option value = ".$row['userID'].">". $row['userID']. ",".$row['firstname']." ".$row['lastname']. "</option>";
+                    }
+                ?>    
                 </select>
-                <input class = "addCustomerFormButton" type="submit" name = "submitAddCustomer" value = "Add class"><br>
+                <input class = "addCustomerFormButton" type="submit" name = "submitAddClass" value = "Add class"><br>
             </form>
          </div>    
     </div>
