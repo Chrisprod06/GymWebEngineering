@@ -29,6 +29,9 @@
                         if($_GET['error'] == 'none'){
                             echo "<p>Your are logged in!</p>";
                         }
+                        if($_GET['reset'] == 'success'){
+                            echo "<p>Reset email sent! Please check your email.</p>";
+                        }
                         
                     }
                 ?>
