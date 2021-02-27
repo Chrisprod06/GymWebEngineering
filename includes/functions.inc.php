@@ -127,12 +127,7 @@ function emptyInputLogin($email, $password){
             header('location: ../customerModule/indexCustomers.php');
             exit();
         }
-        
-        
-
     }
-
-
 }
 
 //function to create a random password
