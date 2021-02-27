@@ -117,8 +117,18 @@ function emptyInputLogin($email, $password){
         $_SESSION['userID'] = $uidExists['userID'];
         $_SESSION['firstname'] = $uidExists['firstname'];
         $_SESSION['lastname'] = $uidExists['lastname'];
-        header('location: ../adminModule/indexAdmin.php');
-        exit();
+        if($uidExists['role'] == 1){
+            header('location: ../adminModule/indexAdmin.php');
+            exit();
+        }else if($uidExists['role'] == 2){
+            header('location: ../trainerModule/indexTrainer.php');
+            exit();
+        }else if ($uidExists['role'] == 3){
+            header('location: ../customerModule/indexCustomers.php');
+            exit();
+        }
+        
+        
 
     }
 
