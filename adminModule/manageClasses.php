@@ -39,12 +39,12 @@
                     <th>Telephone</th>
                 </tr>
 
-                <!--PHP script to load data from users table-->
+                <!--PHP script to load data from  table-->
                 <?php
                 
                     include_once '../includes/dbh.inc.php';
-            
-                    $sql = "SELECT userID, firstname, lastname, telephone, address ,email, role FROM users WHERE role=3; ";
+                    //sql query not working
+                    $sql = "SELECT classID,className,day,startTime,endTime,role,firstname,lastname,telephone,email, FROM users NATURAL JOIN classes; ";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
 
@@ -79,6 +79,8 @@
             <h2 class = "manageHeader">Add Class</h2>
             <hr class ="border">
             <form class = "addCustomerForm" action="../includes/addClass.inc.php" method = "POST">
+            <label for="classID">Class ID:</label><br>
+                <input class = "addCustomerFormInput" type="text" name = "classID"></input><br>
                 <label for="className">Class Name:</label><br>
                 <input class = "addCustomerFormInput" type="text" name = "className"></input><br>
                 <label for="day">Day:</label>
@@ -96,8 +98,6 @@
                 <input class = "addCustomerFormInput" type="time" name = "startTime"></input><br>
                 <label for="endTime">End Time:</label><br>
                 <input class = "addCustomerFormInput" type="time" name = "endTime"></input><br>
-                <label for="address">Address:</label><br>
-                <input class = "addCustomerFormInput" type="int" name = "address"></input><br>
                 <label for="email">Trainer ID:</label><br>
                 <select class = "addCustomerFormInput" name="trainerID" id="trainerID">
                     <option value="null"></option>
