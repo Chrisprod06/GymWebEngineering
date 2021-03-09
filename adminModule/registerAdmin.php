@@ -57,7 +57,7 @@
 
         </div>
         <div class="link-container">
-            <a href="../resetPassword.html" class="credentials-link">Forgot Password?</a>
+            <a href="../resetPasswordRequest.php" class="credentials-link">Forgot Password?</a>
         </div>
         <div class="link-container">
             <a href="loginAdmin.php" class="credentials-link">Already have an account? Login</a>
