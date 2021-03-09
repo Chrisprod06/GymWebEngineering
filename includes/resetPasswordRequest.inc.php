@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 
     //Delete email if it already exists in database so that we dont have multiple matches with emails and tokens for one user
     $sql = "DELETE FROM passwordreset WHERE passwordResetEmail = ?; ";
-    $stmt = mysqli_init($conn);
+    $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_prepare($stmt,$sql)){
         header("Location:../resetPasswordRequest.php?error=stmtFailed");
@@ -27,6 +27,7 @@ if(isset($_POST['submit'])){
     }
     //Insert password request 
     $sql = "INSERT INTO passwordReset(passwordResetEmail, passwordResetSelector, passwordResetToken, passwordResetExpires) VALUES(?,?,?,?);";
+    $stmt=mysqli_stmt_init($conn);   
 
     if(!mysqli_prepare($stmt,$sql)){
         header("Location:../resetPasswordRequest.php?error=stmtFailed");
@@ -53,7 +54,7 @@ if(isset($_POST['submit'])){
     $message .= '<p>The password reset link: </br>';
     $message .= '<a href"'.$url. '">'.$url.'</a></p>';
 
-    $headers = "From: Elit3 <elit3@gmal.com>\r\n";
+    $headers = "From: Elit3 <elit3@gmail.com>\r\n";
     $headers .= "Reply-To: elit3@gmail.com\r\n";
     $headers .= "Content-type: text/html\r\n";
 
@@ -64,5 +65,5 @@ if(isset($_POST['submit'])){
 }
 else{
     header('location: ../resetPassword.php');
-    exit();
+    
 }

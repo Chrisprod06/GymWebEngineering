@@ -1,11 +1,11 @@
 <?php
 
-if(isset($_POST['submitResetPassword'])){
+if(isset($_POST["submitResetPassword"])){
 
-    $selector = $_POST['selector'];
-    $validator = $_POST['validator'];
-    $password = $_POST['pass'];
-    $repeatPassword = $_POST['rePass'];
+    $selector = $_POST["selector"];
+    $validator = $_POST["validator"];
+    $password = $_POST["pass"];
+    $repeatPassword = $_POST["rePass"];
 
     //error handlers
 
@@ -23,7 +23,7 @@ if(isset($_POST['submitResetPassword'])){
     require_once 'dbh.inc.php';
 
     $sql = "SELECT * passwordreset WHERE passwordResetSelector=? AND passwordResetExpires>= ? ;";
-    $stmt = mysqli_init($conn);
+    $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_prepare($stmt,$sql)){
         header("Location:../createNewPassword.php?error=stmtFailed");
@@ -38,19 +38,19 @@ if(isset($_POST['submitResetPassword'])){
             exit();
         }else{
             $tokenBinary = hex2bin($validator);
-            $tokenCheck = password_verify($tokenBinary,$row['passwordResetToken']);
+            $tokenCheck = password_verify($tokenBinary,$row["passwordResetToken"]);
 
             if($tokenCheck === false){
                 header("Location: ..//adminModule/loginAdmin.php?error=tryAgainReset");
                 exit();
             }else if ($tokenCheck === true){
 
-                $tokenEmail = $row['passwordResetEmail'];
+                $tokenEmail = $row["passwordResetEmail"];
 
                 $sql = "SELECT * FROM users WHERE email=?";
-                $stmt = mysqli_init($conn);
+                $stmt = mysqli_stmt_init($conn);
 
-                if(!mysqli_prepare($stmt,$sql)){
+                if(!mysqli_stmt_prepare($stmt,$sql)){
                     header("Location:../createNewPassword.php?error=stmtFailed");
                     exit();
                 }else{
@@ -100,5 +100,5 @@ if(isset($_POST['submitResetPassword'])){
 
 }else{
     header("Location: ../includes/createNewPassword.php");
-    exit();
+    
 }
