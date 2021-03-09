@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         exit();
     }
 
-    loginUser($conn, $email, $password);
+    loginUser($conn, $email, $password,$role);
 } else {
     header('location: ../adminModule/loginAdmin.php');
 
