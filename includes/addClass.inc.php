@@ -1,7 +1,7 @@
 <?php
 
 
-if (isset($_POST['submitAddClass']) ){
+if (isset($_POST['submitAddClass'])) {
 
 
     $classID = $_POST['classID'];
@@ -16,13 +16,11 @@ if (isset($_POST['submitAddClass']) ){
 
 
     //error handlers
-   
-
-   //Function to add class
-   addClass($conn,$classID,$className,$day,$startTime,$endTime,$trainerID);
 
 
-}else{
+    //Function to add class
+    addClass($conn, $classID, $className, $day, $startTime, $endTime, $trainerID);
+} else {
     header('Location: ../adminModule/manageClasses.php');
     exit();
 }

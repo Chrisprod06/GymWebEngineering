@@ -1,256 +1,289 @@
-*{
-  box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
 
-
-body{
-  background: darkslategray;
-
+body {
+    background: darkslategray;
 }
+
 
 /*index page header*/
-.header{
-  text-align: left;
-  color: white;
-  text-shadow: 2px 2px gray;
-  font-weight: bolder;
-  font-size: 22px;
+
+.header {
+    text-align: left;
+    color: white;
+    text-shadow: 2px 2px gray;
+    font-weight: bolder;
+    font-size: 22px;
 }
-hr.border{
-  border: 3px solid white;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
+
+hr.border {
+    border: 3px solid white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
+
 
 /*Index page menu*/
 
-.menu-row:after{
-  
-  content: "";
-  display: table;
-  clear: both;
-  
-
-}
-.menu-column{
-  margin-top: 250px;
-  float: left;
-  width: 25%;
-  padding: 10px;
-  display: grid;
-  justify-content: center;
+.menu-row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-
-.menu-button{
-  background-color: khaki;
-  border:none;
-  color:black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  display:inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 8px;
+.menu-column {
+    margin-top: 250px;
+    float: left;
+    width: 25%;
+    padding: 10px;
+    display: grid;
+    justify-content: center;
 }
+
+.menu-button {
+    background-color: khaki;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
 .menu-button:hover {
-  box-shadow: 0 0 11px white; 
+    box-shadow: 0 0 11px white;
 }
-
 
 
 /*Add responsivness*/
+
 @media screen and (max-width: 600px) {
-  .menu-column {
-    width: 100%;
-  }
+    .menu-column {
+        width: 100%;
+    }
 }
+
 
 /*Login and register form*/
-.form-header{
-  text-align: center;
-  font-size: larger;
-  margin-bottom: 50px;
-}
-.credentials-Container{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  padding: 20px 80px 20px 80px;
-  background: lightgray;
-  border-radius: 10%;
+
+.form-header {
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 50px;
 }
 
-.credentials-input{
-  padding:10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 300px;
-  font-size: medium;
-  border: none;
+.credentials-Container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 80px 20px 80px;
+    background: lightgray;
+    border-radius: 10%;
 }
 
-.credentials-button{
-  margin: 15px 0px 15px 0px;
-  width: 100%;
-  height: 35px;
-  text-align: center;
-  display: inline-block;
-  padding: 15px 0px 30px 0px;
-  background-color: khaki;
-  cursor: pointer;
-  border:none;
-  color: black;
-  font-size:medium;
-  
-  
-}
-.credentials-link{
-  
-  background-color: rgb(245, 233, 127);
-  color:black;
-  padding :14px 25px;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-
-}
-.credentials-link:hover{
-  background-color: khaki;
+.credentials-input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 300px;
+    font-size: medium;
+    border: none;
 }
 
-.link-container{
-  padding-top: 10px;
-  padding-bottom: 12px;
+.credentials-button {
+    margin: 15px 0px 15px 0px;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 0px 30px 0px;
+    background-color: khaki;
+    cursor: pointer;
+    border: none;
+    color: black;
+    font-size: medium;
 }
+
+.credentials-link {
+    background-color: rgb(245, 233, 127);
+    color: black;
+    padding: 14px 25px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.credentials-link:hover {
+    background-color: khaki;
+}
+
+.link-container {
+    padding-top: 10px;
+    padding-bottom: 12px;
+}
+
 
 /*Side Navbar*/
 
+
 /*Side navigation menu*/
-.sidenav{
-  height:100%; /*full height*/
-  width: 0%; /*by default width is 0 we change this with javascript*/
-  position: fixed; /*dont move*/
-  z-index: 1; /*stay on top*/
-  top: 0; /*stay at the top*/
-  left: 0; /*stay left*/
-  background-color:khaki;/*color is black*/
-  overflow-x: hidden;/*disable scroll*/
-  padding-top: 60px;
-  transition: 0.5s;
+
+.sidenav {
+    height: 100%;
+    /*full height*/
+    width: 0%;
+    /*by default width is 0 we change this with javascript*/
+    position: fixed;
+    /*dont move*/
+    z-index: 1;
+    /*stay on top*/
+    top: 0;
+    /*stay at the top*/
+    left: 0;
+    /*stay left*/
+    background-color: khaki;
+    /*color is black*/
+    overflow-x: hidden;
+    /*disable scroll*/
+    padding-top: 60px;
+    transition: 0.5s;
 }
+
 
 /*navigation menu links*/
-.sidenav a{
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;;
-  color: black;
-  display: block;
-  transition: 0.3s;
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    ;
+    color: black;
+    display: block;
+    transition: 0.3s;
 }
+
 
 /*change color when mouse hovers over the links*/
-.sidenav a:hover{
-  color:darkgrey;
+
+.sidenav a:hover {
+    color: darkgrey;
 }
+
 
 /*Position and style the close button (top right corner)*/
-.sidenav .closebtn{
-  position: absolute;
-  top:0;
-  right:25px;
-  font-size: 36px;
-  margin-left: 50px;
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
+
 
 /*Style page content*/
-#main{
-  transition: margin-left .5s;
-  padding: 20px;
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
 }
+
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
+
 
 /*Logout btn*/
-.logoutbtn{
-  position: absolute;
-  display: inline-block;
-  bottom: 10%;
-  
+
+.logoutbtn {
+    position: absolute;
+    display: inline-block;
+    bottom: 10%;
 }
+
 
 /*Manage*/
-.dataTableContainer{
-  overflow-x:auto
+
+.dataTableContainer {
+    overflow-x: auto
 }
-.manageHeader{
-  color: white;
+
+.manageHeader {
+    color: white;
 }
+
 
 /*Customers table*/
-.dataTable{
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+
+.dataTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.dataTable td{
-  border: 1px solid #ddd;
-  padding:8px;
-  text-align: left;
-}
-.dataTable th{
-  border: 1px solid #ddd;
-  padding:8px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color:white;
-}
-.dataTable tr{
-  background-color: khaki;
+.dataTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
 
-.dataTable tr:hover{
-  background-color: #ddd;
+.dataTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: white;
 }
 
-.addCustomerForm{
-  position: relative;
-  padding: 20px 80px 20px 80px;
-  background: lightgray;
-  border-radius: 10%;
-  width: 370px;
-
+.dataTable tr {
+    background-color: khaki;
 }
 
-.addCustomerFormInput{
-  width: 200px;
-  border: none;
-  padding: 5px 7px 5px 7px;
-
+.dataTable tr:hover {
+    background-color: #ddd;
 }
 
-.addCustomerFormButton{
-  margin: 15px 0px 15px 0px;
-  width: 95%;
-  height: 35px;
-  text-align: center;
-  display: inline-block;
-  padding: 15px 0px 30px 0px;
-  background-color: khaki;
-  cursor: pointer;
-  border:none;
-  color: black;
-  font-size:medium;
+.addCustomerForm {
+    position: relative;
+    padding: 20px 80px 20px 80px;
+    background: lightgray;
+    border-radius: 10%;
+    width: 370px;
+}
+
+.addCustomerFormInput {
+    width: 200px;
+    border: none;
+    padding: 5px 7px 5px 7px;
+}
+
+.addCustomerFormButton {
+    margin: 15px 0px 15px 0px;
+    width: 95%;
+    height: 35px;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 0px 30px 0px;
+    background-color: khaki;
+    cursor: pointer;
+    border: none;
+    color: black;
+    font-size: medium;
 }

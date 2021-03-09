@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['submitRemoveCustomer'])){
+if (isset($_POST['submitRemoveCustomer'])) {
     $userID = $_POST['users'];
 
     include_once '../includes/dbh.inc.php';
@@ -10,9 +10,7 @@ if (isset($_POST['submitRemoveCustomer'])){
     //error handlers
 
 
-    removeCustomer($conn,$userID);
-
-
-}else{
+    removeCustomer($conn, $userID);
+} else {
     header("location: ../adminModule/manageCustomers.php");
 }
