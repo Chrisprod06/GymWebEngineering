@@ -17,7 +17,7 @@ if (isset($_POST['submitCreateAdmin']) || isset($_POST['submitCreateCustomer']) 
     } else if (isset($_POST['submitCreateTrainer'])) {
         $role = 2;
     } else if (isset($_POST['submitCreateCustomer'])) {
-        $role = 2;
+        $role = 3;
     }
 
 
