@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST["submitResetPassword"])){
+if (isset($_POST["submitResetPassword"])) {
 
     $selector = $_POST["selector"];
     $validator = $_POST["validator"];
@@ -9,11 +9,10 @@ if(isset($_POST["submitResetPassword"])){
 
     //error handlers
 
-    if(empty($password) || empty($repeatPassword)){
-       header("Location: ../adminModule/loginAdmin.php?error=tryAgainReset");
-       exit();
-
-    }else if($password!=$repeatPassword){
+    if (empty($password) || empty($repeatPassword)) {
+        header("Location: ../adminModule/loginAdmin.php?error=tryAgainReset");
+        exit();
+    } else if ($password != $repeatPassword) {
         header("Location:../createNewPasword?error=passwordDontMatch");
         exit();
     }
@@ -25,80 +24,70 @@ if(isset($_POST["submitResetPassword"])){
     $sql = "SELECT * passwordreset WHERE passwordResetSelector=? AND passwordResetExpires>= ? ;";
     $stmt = mysqli_stmt_init($conn);
 
-    if(!mysqli_prepare($stmt,$sql)){
+    if (!mysqli_prepare($stmt, $sql)) {
         header("Location:../createNewPassword.php?error=stmtFailed");
         exit();
-    }else{
-        mysqli_stmt_bind_param($stmt, "ss",$selector,$currentDate);
+    } else {
+        mysqli_stmt_bind_param($stmt, "ss", $selector, $currentDate);
         mysqli_stmt_execute($stmt);
-        
+
         $result = mysqli_stmt_get_result($stmt);
-        if(!$row = mysqli_fetch_assoc($result)){
+        if (!$row = mysqli_fetch_assoc($result)) {
             header("Location: ..//adminModule/loginAdmin.php?error=tryAgainReset");
             exit();
-        }else{
+        } else {
             $tokenBinary = hex2bin($validator);
-            $tokenCheck = password_verify($tokenBinary,$row["passwordResetToken"]);
+            $tokenCheck = password_verify($tokenBinary, $row["passwordResetToken"]);
 
-            if($tokenCheck === false){
+            if ($tokenCheck === false) {
                 header("Location: ..//adminModule/loginAdmin.php?error=tryAgainReset");
                 exit();
-            }else if ($tokenCheck === true){
+            } else if ($tokenCheck === true) {
 
                 $tokenEmail = $row["passwordResetEmail"];
 
                 $sql = "SELECT * FROM users WHERE email=?";
                 $stmt = mysqli_stmt_init($conn);
 
-                if(!mysqli_stmt_prepare($stmt,$sql)){
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location:../createNewPassword.php?error=stmtFailed");
                     exit();
-                }else{
-                    mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
+                } else {
+                    mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
                     mysqli_stmt_execute($stmt);
                     $result = mysqli_stmt_get_result($stmt);
-                    if(!$row = mysqli_fetch_assoc($result)){
+                    if (!$row = mysqli_fetch_assoc($result)) {
                         header("Location: ..//adminModule/loginAdmin.php?error=tryAgainReset");
                         exit();
-                    }else{
+                    } else {
                         $sql = 'UPDATE users SET password =? WHERE email=?;';
                         $stmt = mysqli_init($conn);
 
-                if(!mysqli_prepare($stmt,$sql)){
-                    header("Location:../createNewPassword.php?error=stmtFailed");
-                    exit();
-                }else{
-                    $newHashedPassword = password_hash($password,PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt,"ss",$newHashedPassword,$tokenEmail);
-                    mysqli_stmt_execute($stmt);
+                        if (!mysqli_prepare($stmt, $sql)) {
+                            header("Location:../createNewPassword.php?error=stmtFailed");
+                            exit();
+                        } else {
+                            $newHashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                            mysqli_stmt_bind_param($stmt, "ss", $newHashedPassword, $tokenEmail);
+                            mysqli_stmt_execute($stmt);
 
-                    $sql = "DELETE FROM passwordreset WHERE passwordResetEmail = ?; ";
-                    $stmt = mysqli_init($conn);
-                
-                    if(!mysqli_prepare($stmt,$sql)){
-                        header("Location:../resetPasswordRequest.php?error=stmtFailed");
-                        exit();
-                    }else{
-                        mysqli_stmt_bind_param($stmt, "s",$tokenEmail);
-                        mysqli_stmt_execute($stmt);
-                        header("location:../adminModule/loginAdmin.php?resetPassword=success");
-                        
-                    }
+                            $sql = "DELETE FROM passwordreset WHERE passwordResetEmail = ?; ";
+                            $stmt = mysqli_init($conn);
 
+                            if (!mysqli_prepare($stmt, $sql)) {
+                                header("Location:../resetPasswordRequest.php?error=stmtFailed");
+                                exit();
+                            } else {
+                                mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
+                                mysqli_stmt_execute($stmt);
+                                header("location:../adminModule/loginAdmin.php?resetPassword=success");
+                            }
+                        }
                     }
                 }
-                    
-                }
-
             }
         }
-
-
     }
-
-
-
-}else{
+} else {
     header("Location: ../includes/createNewPassword.php");
-    
 }
