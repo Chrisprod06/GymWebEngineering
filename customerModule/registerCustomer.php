@@ -28,7 +28,7 @@
                     <input type="password"class="credentials-input" name="pass" id="pass"><br>
                     <label for="rePass">Repeat Password:</label><br>
                     <input type="password" class="credentials-input" name="rePass" id="rePass"><br>
-                    <input type="submit" name = "submitCreateTrainer" class="credentials-button" value="Create Account">
+                    <input type="submit" name = "submitCreateCustomer" class="credentials-button" value="Create Account">
                 </form>
                 <?php
                     if(isset($_GET['error'])){
