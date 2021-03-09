@@ -67,7 +67,13 @@ function createUser($conn, $firstname, $lastname, $telephone, $address, $email, 
     $sql = 'INSERT INTO users (firstname, lastname, telephone, address, email, password, role ) VALUES (?,?,?,?,?,?,?);';
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
+        if($role == 1){
+            header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
+        }else if ($role == 2){
+            header('location: ../customerModule/registerCustomer.php?error=stmtfailed');
+        }else if ($role == 3){
+            header('location: ../trainerModule/registerTrainer.php?error=stmtfailed');
+        }
         exit();
     }
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -75,7 +81,13 @@ function createUser($conn, $firstname, $lastname, $telephone, $address, $email, 
     mysqli_stmt_bind_param($stmt, "ssisssi", $firstname, $lastname, $telephone, $address, $email, $hashedPassword, $role);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('location: ../adminModule/registerAdmin.php?error=none');
+    if($role == 1){
+        header('location: ../adminModule/registerAdmin.php?error=none');
+    }else if ($role == 2){
+        header('location: ../customerModule/registerCustomer.php?error=none');
+    }else if ($role == 3){
+        header('location: ../trainerModule/registerTrainer.php?error=none');
+    }
     exit();
 }
 
