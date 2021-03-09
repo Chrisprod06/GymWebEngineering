@@ -38,12 +38,18 @@ function pwdMatch($password, $rePassword)
 }
 
 //function if email is submitted
-function emailExists($conn, $email)
+function emailExists($conn, $email,$role)
 {
     $sql = 'SELECT * FROM users WHERE email = ?;';
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
+        if($role == 1){
+            header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
+        }else if ($role == 3){
+            header('location: ../customerModule/registerCustomer.php?error=stmtfailed');
+        }else if ($role == 2){
+            header('location: ../trainerModule/registerTrainer.php?error=stmtfailed');
+        }
         exit();
     }
 
@@ -69,9 +75,9 @@ function createUser($conn, $firstname, $lastname, $telephone, $address, $email, 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         if($role == 1){
             header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
-        }else if ($role == 2){
-            header('location: ../customerModule/registerCustomer.php?error=stmtfailed');
         }else if ($role == 3){
+            header('location: ../customerModule/registerCustomer.php?error=stmtfailed');
+        }else if ($role == 2){
             header('location: ../trainerModule/registerTrainer.php?error=stmtfailed');
         }
         exit();
@@ -83,9 +89,9 @@ function createUser($conn, $firstname, $lastname, $telephone, $address, $email, 
     mysqli_stmt_close($stmt);
     if($role == 1){
         header('location: ../adminModule/registerAdmin.php?error=none');
-    }else if ($role == 2){
-        header('location: ../customerModule/registerCustomer.php?error=none');
     }else if ($role == 3){
+        header('location: ../customerModule/registerCustomer.php?error=none');
+    }else if ($role == 2){
         header('location: ../trainerModule/registerTrainer.php?error=none');
     }
     exit();
@@ -104,13 +110,19 @@ function emptyInputLogin($email, $password)
 }
 
 //function to login user
-function loginUser($conn, $email, $password)
+function loginUser($conn, $email, $password,$role)
 {
 
-    $uidExists = emailExists($conn, $email);
+    $uidExists = emailExists($conn, $email,$role);
 
     if ($uidExists === false) {
-        header('location: ../adminModule/registerAdmin.php?error=wronglogin');
+        if($role == 1){
+            header('location: ../adminModule/registerAdmin.php?error=wronglogin');
+        }else if ($role == 3){
+            header('location: ../customerModule/registerCustomer.php?error=wronglogin');
+        }else if ($role == 2){
+            header('location: ../trainerModule/registerTrainer.php?error=wronglogin');
+        }
         exit();
     }
 
@@ -118,7 +130,13 @@ function loginUser($conn, $email, $password)
     $checkPassword = password_verify($password, $passwordHashed);
 
     if ($checkPassword === false) {
-        header('location: ../adminModule/loginAdmin.php?error=wrongpassword');
+        if($role == 1){
+            header('location: ../adminModule/registerAdmin.php?error=wrongpassword');
+        }else if ($role == 3){
+            header('location: ../customerModule/registerCustomer.php?error=wrongpassword');
+        }else if ($role == 2){
+            header('location: ../trainerModule/registerTrainer.php?error=wrongpassword');
+        }
         exit();
     } else if ($checkPassword === true) {
         session_start();

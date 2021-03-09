@@ -36,9 +36,9 @@ if (isset($_POST['submitCreateAdmin']) || isset($_POST['submitCreateCustomer']) 
     if (invalidEmail($email) !== false) {
         if($role == 1){
             header('location: ../adminModule/registerAdmin.php?error=invalidemail');
-        }else if ($role == 2){
-            header('location: ../customerModule/registerCustomer.php?error=invalidemail');
         }else if ($role == 3){
+            header('location: ../customerModule/registerCustomer.php?error=invalidemail');
+        }else if ($role == 2){
             header('location: ../trainerModule/registerTrainer.php?error=invalidemail');
         }
         
@@ -48,19 +48,19 @@ if (isset($_POST['submitCreateAdmin']) || isset($_POST['submitCreateCustomer']) 
     if (pwdMatch($password, $rePassword) !== false) {
         if($role == 1){
             header('location: ../adminModule/registerAdmin.php?error=invalidemail');
-        }else if ($role == 2){
-            header('location: ../customerModule/registerCustomer.php?error=invalidemail');
         }else if ($role == 3){
+            header('location: ../customerModule/registerCustomer.php?error=invalidemail');
+        }else if ($role == 2){
             header('location: ../trainerModule/registerTrainer.php?error=invalidemail');
         }
         exit();
     }
-    if (emailExists($conn, $email) !== false) {
+    if (emailExists($conn, $email,$role) !== false) {
         if($role == 1){
             header('location: ../adminModule/registerAdmin.php?error=emailExists');
-        }else if ($role == 2){
-            header('location: ../customerModule/registerCustomer.php?error=emailExists');
         }else if ($role == 3){
+            header('location: ../customerModule/registerCustomer.php?error=emailExists');
+        }else if ($role == 2){
             header('location: ../trainerModule/registerTrainer.php?error=emailExists');
         }
         exit();
@@ -71,9 +71,9 @@ if (isset($_POST['submitCreateAdmin']) || isset($_POST['submitCreateCustomer']) 
 } else {
     if($role == 1){
         header('location: ../adminModule/registerAdmin.php');
-    }else if ($role == 2){
-        header('location: ../customerModule/registerCustomer.php');
     }else if ($role == 3){
+        header('location: ../customerModule/registerCustomer.php');
+    }else if ($role == 2){
         header('location: ../trainerModule/registerTrainer.php');
     }
     
