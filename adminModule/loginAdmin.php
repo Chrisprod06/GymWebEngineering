@@ -43,7 +43,7 @@
                 <input type="email" class="credentials-input" name="email" id="email"><br>
                 <label for="pass">Password:</label><br>
                 <input type="password" class="credentials-input" name="pass" id="pass"><br>
-                <input type="submit" class="credentials-button" name="submit" value="Login">
+                <input type="submit" class="credentials-button" name="submitLoginAdmin" value="Login">
             </form>
 
         </div>

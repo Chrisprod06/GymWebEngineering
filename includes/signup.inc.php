@@ -28,7 +28,14 @@ if (isset($_POST['submitCreateAdmin']) || isset($_POST['submitCreateCustomer']) 
 
     //error handlers
     if (emptyInputSignup($firstname, $lastname, $telephone, $address, $email, $password, $rePassword) !== false) {
-        header('location: ../adminModule/registerAdmin.php?error=emptyinput');
+        if($role == 1){
+            header('location: ../adminModule/registerAdmin.php?error=emptyinput');
+        }else if ($role == 3){
+            header('location: ../customerModule/registerCustomer.php?error=emptyinput');
+        }else if ($role == 2){
+            header('location: ../trainerModule/registerTrainer.php?error=emptyinput');
+        }
+        
         exit();
     }
     //need to create telephone function validation
@@ -55,7 +62,7 @@ if (isset($_POST['submitCreateAdmin']) || isset($_POST['submitCreateCustomer']) 
         }
         exit();
     }
-    if (emailExists($conn, $email,$role) !== false) {
+    if (emailExists($conn, $email,$role,1) !== false) {
         if($role == 1){
             header('location: ../adminModule/registerAdmin.php?error=emailExists');
         }else if ($role == 3){
