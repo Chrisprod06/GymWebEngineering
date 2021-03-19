@@ -31,6 +31,10 @@
             if ($_GET['error'] == 'none') {
                 echo "<p>Your are logged in!</p>";
             }
+        } else if (isset($_GET['reset'])) {
+            if ($_GET['reset'] == 'success') {
+                echo "<p>Reset email sent! Please check your email.</p>";
+            }
         }
         ?>
         <div>
@@ -39,7 +43,7 @@
                 <input type="email" class="credentials-input" name="email" id="email"><br>
                 <label for="pass">Password:</label><br>
                 <input type="password" class="credentials-input" name="pass" id="pass"><br>
-                <input type="submit" class="credentials-button" name="submit" value="Login">
+                <input type="submit" class="credentials-button" name="submitLoginTrainer" value="Login">
             </form>
 
         </div>

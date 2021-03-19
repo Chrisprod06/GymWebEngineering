@@ -38,18 +38,29 @@ function pwdMatch($password, $rePassword)
 }
 
 //function if email is submitted
-function emailExists($conn, $email,$role)
+function emailExists($conn, $email,$role,$calling)
 {
     $sql = 'SELECT * FROM users WHERE email = ?;';
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        if($role == 1){
-            header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
-        }else if ($role == 3){
-            header('location: ../customerModule/registerCustomer.php?error=stmtfailed');
-        }else if ($role == 2){
-            header('location: ../trainerModule/registerTrainer.php?error=stmtfailed');
+        if($calling = 1){
+            if($role == 1){
+                header('location: ../adminModule/registerAdmin.php?error=stmtfailed');
+            }else if ($role == 3){
+                header('location: ../customerModule/registerCustomer.php?error=stmtfailed');
+            }else if ($role == 2){
+                header('location: ../trainerModule/registerTrainer.php?error=stmtfailed');
+            }
+        }else if ($calling = 2){
+            if($role == 1){
+                header('location: ../adminModule/loginAdmin.php?error=stmtfailed');
+            }else if ($role == 3){
+                header('location: ../customerModule/loginCustomer.php?error=stmtfailed');
+            }else if ($role == 2){
+                header('location: ../trainerModule/loginTrainer.php?error=stmtfailed');
+            }
         }
+        
         exit();
     }
 
@@ -113,7 +124,7 @@ function emptyInputLogin($email, $password)
 function loginUser($conn, $email, $password,$role)
 {
 
-    $uidExists = emailExists($conn, $email,$role);
+    $uidExists = emailExists($conn, $email,$role,2);
 
     if ($uidExists === false) {
         if($role == 1){
@@ -131,11 +142,11 @@ function loginUser($conn, $email, $password,$role)
 
     if ($checkPassword === false) {
         if($role == 1){
-            header('location: ../adminModule/registerAdmin.php?error=wrongpassword');
+            header('location: ../adminModule/loginAdmin.php?error=wrongpassword');
         }else if ($role == 3){
-            header('location: ../customerModule/registerCustomer.php?error=wrongpassword');
+            header('location: ../customerModule/loginCustomer.php?error=wrongpassword');
         }else if ($role == 2){
-            header('location: ../trainerModule/registerTrainer.php?error=wrongpassword');
+            header('location: ../trainerModule/loginTrainer.php?error=wrongpassword');
         }
         exit();
     } else if ($checkPassword === true) {
