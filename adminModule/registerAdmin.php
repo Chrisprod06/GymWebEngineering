@@ -1,14 +1,7 @@
-<!--Christophoros Prodromou, Vangelis Photiou, Stephanos Christodoulou-->
-<!DOCTYPE html>
-
-<html>
-
-<head>
-    <title>Admin Register | Gym</title>
-    <link rel="stylesheet" href="../style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
+<<?php
+    $title = 'Register Admin | Gym'; 
+    include_once '../includes/header.inc.php';
+?>
 <body>
 
     <!--Register Form-->

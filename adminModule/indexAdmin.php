@@ -1,22 +1,10 @@
-<!--PHP script that redirects to login if not signed in-->
-
 <?php
-session_start();
-if (!isset($_SESSION['userID'])) {
-    header('location: loginAdmin.php');
-}
+    $title = 'Home Admin | Gym'; 
+    include_once '../includes/header.inc.php';
+    if (!isset($_SESSION['userID'])) {
+        header('location: loginAdmin.php');
+    }
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Dashboard Admin | Gym</title>
-    <link rel="stylesheet" href="../style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../myScripts.js"></script>
-
-</head>
 
 <body>
 

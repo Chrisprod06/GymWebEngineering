@@ -1,13 +1,7 @@
-<!--Christophoros Prodromou, Vangelis Photiou, Stephanos Christodoulou-->
-<!DOCTYPE html>
-
-<html>
-
-<head>
-    <title>Admin Login | Gym</title>
-    <link rel="stylesheet" href="../style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<?php
+    $title = 'Login Admin | Gym'; 
+    include_once '../includes/header.inc.php';
+?>
 
 <body>
 
