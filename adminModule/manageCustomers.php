@@ -1,10 +1,11 @@
 <?php
-    $title = 'Manage Customers | Gym'; 
-    include_once '../includes/header.inc.php';
-    if (!isset($_SESSION['userID'])) {
-        header('location: loginAdmin.php');
-    }
+$title = 'Manage Customers | Gym';
+include_once '../includes/header.inc.php';
+if (!isset($_SESSION['userID'])) {
+    header('location: loginAdmin.php');
+}
 ?>
+
 <body>
 
     <!--Navbar-->
@@ -60,12 +61,12 @@
                     ?>
                 </table>
             </div>
+            <div class="actionsContainer">
+                <a href="addCustomer.php" class="actionLinks">Add Customer</a>
+                <a href="deleteCustomer.php" class="actionLinks">Delete Customer</a>
+            </div>
+
         </div>
-
-      
-
-       
-
 
     </div>
 

@@ -295,3 +295,18 @@ hr.border {
     transform: translate(-50%, -50%);
     padding: 20px 80px 20px 80px;
 }
+
+.actionLinks{
+    background-color: rgb(245, 233, 127);
+    margin-right:10px;
+    color: black;
+    padding: 10px 20px;
+    width:  150px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.actionsContainer{
+    margin-top: 15px;
+}

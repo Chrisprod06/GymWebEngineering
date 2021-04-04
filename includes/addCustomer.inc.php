@@ -16,7 +16,7 @@ if (isset($_POST['submitAddCustomer'])) {
 
 
     //error handlers
-    if (emailExists($conn, $email,$role) == true) {
+    if (emailExists($conn, $email,$role,1) == true) {
         header('Location: ../adminModule/manageCustomers.php?error=userAlreadyExists');
         exit();
     }

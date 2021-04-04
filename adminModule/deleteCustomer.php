@@ -33,7 +33,9 @@ if (!isset($_SESSION['userID'])) {
                     ?>
                 </select>
                 <input  class="addCustomerFormButton" type="submit" name="submitRemoveCustomer" value="Delete customer"><br>
-                <a class="addCustomerFormButton" href="manageCustomers.php" class="credentials-link">Go Back</a>
+                
+                <a style="width : 95%" href="manageCustomers.php" class="actionLinks">Cancel</a>
+
             </form>
         </div>
 
