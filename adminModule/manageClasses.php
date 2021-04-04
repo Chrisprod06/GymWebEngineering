@@ -1,9 +1,9 @@
 <?php
-    $title = 'Manage Classes | Gym'; 
-    include_once '../includes/header.inc.php';
-    if (!isset($_SESSION['userID'])) {
-        header('location: loginAdmin.php');
-    }
+$title = 'Manage Classes | Gym';
+include_once '../includes/header.inc.php';
+if (!isset($_SESSION['userID'])) {
+    header('location: loginAdmin.php');
+}
 ?>
 
 <body>
@@ -29,6 +29,7 @@
                         <th>Firstname</th>
                         <th>Lastname</th>
                         <th>Telephone</th>
+                        <th>Email</th>
                     </tr>
 
                     <!--PHP script to load data from  table-->
@@ -36,7 +37,7 @@
 
                     include_once '../includes/dbh.inc.php';
                     //sql query not working
-                    $sql = "SELECT classID,className,day,startTime,endTime,role,firstname,lastname,telephone,email, FROM users NATURAL JOIN classes; ";
+                    $sql = "SELECT classID,className,day,startTime,endTime,role,firstname,lastname,telephone,email FROM users NATURAL JOIN enrolledclasses NATURAL JOIN classes; ";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
 
@@ -51,8 +52,8 @@
                                 $role = 'Customer';
                             }
 
-                            echo "<tr><td>" . $row["userID"] . "</td><td>" . $row["firstname"] . "</td><td>"
-                                . $row["lastname"] . "</td><td>" . $row['telephone'] . "</td><td>" . $row['address'] . "</td><td>" . $row['email'] . "</td><td>" . $role . "</td></tr>";
+                            echo "<tr><td>" . $row["classID"] . "</td><td>" . $row["className"] . "</td><td>"
+                                . $row["day"] . "</td><td>" . $row['startTime'] . "</td><td>" . $row['endTime'] . "</td><td>" . $row['role'] . "</td><td>" . $row['firstname'] . "</td><td>". $row['lastname'] . "</td><td>". $row['telephone'] . "</td><td>" . $row['email'] . "</td></tr>";
                         }
                         echo "</table>";
                     } else {
@@ -62,9 +63,13 @@
                     ?>
                 </table>
             </div>
+            <div class="actionsContainer">
+                <a href="addClass.php" class="actionLinks">Add Class</a>
+                
+            </div>
         </div>
 
-       
+
     </div>
 
 </body>
