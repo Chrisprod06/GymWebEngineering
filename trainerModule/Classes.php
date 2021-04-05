@@ -15,6 +15,12 @@ $trainerid=$_SESSION['userID'];
 </head>
 
 <body>
+
+
+<?php
+    include_once 'navbarTrainer.php';
+?>
+
 <div id="main">
         <!--Table to present data-->
         <div class="dataTableContainer">
