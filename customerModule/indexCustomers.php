@@ -30,7 +30,7 @@ if (!isset($_SESSION['userID'])) {
     <!--Menu-->
     <div class="menu-row">
         <div class="menu-column">
-            <a href="manageCustomers.php" class="menu-button">My Profile</a>
+            <a href="profileEdit.php" class="menu-button">My Profile</a>
         </div>
         <div class="menu-column">
             <a href="manageTrainers.php" class="menu-button">My Classes</a>

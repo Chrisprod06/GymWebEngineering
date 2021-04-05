@@ -5,6 +5,7 @@
         <a href="manageTrainers.php">Trainers</a>
         <a href="manageClasses.php">Classes</a>
         <a href="contactQueries.php">Queries</a>
+        <a href="../includes/editProfile.php" >Edit Profile</a>
         <a href="../includes/logout.inc.php" class="logoutbtn">Logout</a>
     </div>
 

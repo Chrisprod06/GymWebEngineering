@@ -1,43 +1,41 @@
 <?php
-$title = 'Manage Classes | Gym';
+$title = 'My profile | Gym';
 include_once '../includes/header.inc.php';
 if (!isset($_SESSION['userID'])) {
-    header('location: loginAdmin.php');
+    header('location: loginCustomer.php');
 }
 ?>
 
 <body>
 
-
+    <!--Navbar-->
     <?php
     include_once 'navbar.php';
     ?>
 
     <div id="main">
+        <!--Table to present data-->
         <div class="dataTableContainer">
-            <h2 class="manageHeader">Classes</h2>
+            <h2 class="manageHeader">Customers</h2>
             <div class="dataTable">
                 <hr class="border">
                 <table>
                     <tr>
-                        <th>ClassID</th>
-                        <th>Class Name</th>
-                        <th>Day</th>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                        <th>Role</th>
+                        <th>UserID</th>
                         <th>Firstname</th>
                         <th>Lastname</th>
                         <th>Telephone</th>
+                        <th>Address</th>
                         <th>Email</th>
+                        <th>Role</th>
                     </tr>
 
-                    <!--PHP script to load data from  table-->
+                    <!--PHP script to load data from users table-->
                     <?php
 
                     include_once '../includes/dbh.inc.php';
-                    //sql query not working
-                    $sql = "SELECT classID,className,day,startTime,endTime,role,firstname,lastname,telephone,email FROM users NATURAL JOIN enrolledclasses NATURAL JOIN classes; ";
+
+                    $sql = "SELECT userID, firstname, lastname, telephone, address ,email, role FROM users WHERE role=3; ";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
 
@@ -52,8 +50,8 @@ if (!isset($_SESSION['userID'])) {
                                 $role = 'Customer';
                             }
 
-                            echo "<tr><td>" . $row["classID"] . "</td><td>" . $row["className"] . "</td><td>"
-                                . $row["day"] . "</td><td>" . $row['startTime'] . "</td><td>" . $row['endTime'] . "</td><td>" . $row['role'] . "</td><td>" . $row['firstname'] . "</td><td>". $row['lastname'] . "</td><td>". $row['telephone'] . "</td><td>" . $row['email'] . "</td></tr>";
+                            echo "<tr><td>" . $row["userID"] . "</td><td>" . $row["firstname"] . "</td><td>"
+                                . $row["lastname"] . "</td><td>" . $row['telephone'] . "</td><td>" . $row['address'] . "</td><td>" . $row['email'] . "</td><td>" . $role . "</td></tr>";
                         }
                         echo "</table>";
                     } else {
@@ -63,12 +61,9 @@ if (!isset($_SESSION['userID'])) {
                     ?>
                 </table>
             </div>
-            <div class="actionsContainer">
-                <a href="addClass.php" class="actionLinks">Add Class</a>
-                
-            </div>
-        </div>
 
+
+        </div>
 
     </div>
 
