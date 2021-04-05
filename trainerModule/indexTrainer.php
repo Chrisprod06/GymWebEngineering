@@ -1,5 +1,6 @@
 <?php
-session_start();
+$title = 'Home Trainer | Gym'; 
+include_once '../includes/header.inc.php';
 if (!isset($_SESSION['userID'])) {
     header('location: loginTrainer.php');
 }
@@ -28,7 +29,7 @@ if (!isset($_SESSION['userID'])) {
     <!--Menu-->
     <div class="menu-row">
         <div class="menu-column">
-            <a href="Customers.php" class="menu-button">Customers</a>
+            <a href="Customers.php" class="menu-button">My Customers</a>
         </div>
         <div class="menu-column">
             <a href="Classes.php" class="menu-button">Classes</a>
