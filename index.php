@@ -22,9 +22,13 @@ include_once 'includes/header.inc.php';
           </a>
         </div>
         <div class="menu-column" style="width:33.33%">
+<<<<<<< Updated upstream
             <a href="customerModule/loginCustomer.php"> <img alt="admin" src="img/customer.png"></a>
             <a href="customerModule/loginCustomer.php" class = "menu-button">Customer</a>
             
+=======
+            <a href="customerModule/loginCustomer.php" class="menu-button">Customer</a>
+>>>>>>> Stashed changes
         </div>
         <div class="menu-column" style="width:33.33%">
             <a href="trainerModule/loginTrainer.php"> <img alt="admin" src="img/trainer.png"></a>
