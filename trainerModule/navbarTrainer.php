@@ -1,11 +1,9 @@
     <!--Navbar-->
     <div class="sidenav" id="mySidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="manageCustomers.php">Customers</a>
-        <a href="manageTrainers.php">Trainers</a>
-        <a href="manageClasses.php">Classes</a>
-        <a href="contactQueries.php">Queries</a>
-        <a href="editProfile.php" >Edit Profile</a>
+        <a href="Customers.php">Customers</a>
+        <a href="Classes.php">Classes</a>
+        <a href="../includes/editProfile.php" >Edit Profile</a>
         <a href="../includes/logout.inc.php" class="logoutbtn">Logout</a>
     </div>
 

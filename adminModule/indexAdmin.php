@@ -27,7 +27,7 @@
             <a href="manageClasses.php" class="menu-button">Classes</a>
         </div>
         <div class="menu-column">
-            <a href="contactUs.php" class="menu-button">Contact Us Queries</a>
+            <a href="contactQueries.php" class="menu-button">Contact Us Queries</a>
         </div>
     </div>
 </body>

@@ -1,4 +1,9 @@
-<!--Christophoros Prodromou, Vangelis Photiou, Stephanos Christodoulou-->
+<?php
+    $title = 'Login Trainer | Gym'; 
+    include_once '../includes/header.inc.php';
+?>
+
+
 <!DOCTYPE html>
 
 <html>

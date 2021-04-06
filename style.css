@@ -265,18 +265,21 @@ hr.border {
     padding: 20px 80px 20px 80px;
     background: lightgray;
     border-radius: 10%;
-    width: 370px;
+    width: 100%;
 }
 
 .addCustomerFormInput {
-    width: 200px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width:100%;
+    font-size: medium;
     border: none;
-    padding: 5px 7px 5px 7px;
 }
 
 .addCustomerFormButton {
     margin: 15px 0px 15px 0px;
-    width: 95%;
+    width: 100%;
     height: 35px;
     text-align: center;
     display: inline-block;
@@ -300,8 +303,8 @@ hr.border {
     background-color: rgb(245, 233, 127);
     margin-right:10px;
     color: black;
-    padding: 10px 20px;
-    width:  150px ;
+    padding: 15px 20px;
+    width:  100% ;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -309,4 +312,19 @@ hr.border {
 
 .actionsContainer{
     margin-top: 15px;
+}
+
+.actionButtons{
+    margin: 15px 0px 15px 0px;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 0px 30px 0px;
+    background-color: khaki;
+    cursor: pointer;
+    border: none;
+    color: black;
+    font-size: medium;
+    text-decoration: none;
 }

@@ -1,5 +1,5 @@
 <?php
-$title = 'Manage Customers | Gym';
+$title = 'Add Class | Gym';
 include_once '../includes/header.inc.php';
 if (!isset($_SESSION['userID'])) {
     header('location: loginAdmin.php');
@@ -11,18 +11,16 @@ if (!isset($_SESSION['userID'])) {
 
 
     <div id="main">
-        <h2 class="manageHeader">Add Class</h2>
+        <h2 class="manageHeader">Add New Class</h2>
         <hr class="border">
 
         <div class="dataFormContainer">
             <!--Form to add classes-->
 
             <form class="addCustomerForm" action="../includes/addClass.inc.php" method="POST">
-                <label for="classID">Class ID:</label><br>
-                <input class="addCustomerFormInput" type="text" name="classID"></input><br>
                 <label for="className">Class Name:</label><br>
                 <input class="addCustomerFormInput" type="text" name="className"></input><br>
-                <label for="day">Day:</label>
+                <label for="day">Day:</label><br>
                 <select class="addCustomerFormInput" name="day" id="day">
                     <option value="null"></option>
                     <option value="Monday">Monday</option>
@@ -52,6 +50,7 @@ if (!isset($_SESSION['userID'])) {
                     ?>
                 </select>
                 <input class="addCustomerFormButton" type="submit" name="submitAddClass" value="Add class"><br>
+                <a  href="manageClasses.php" class="actionLinks">Cancel</a>
             </form>
         </div>
 

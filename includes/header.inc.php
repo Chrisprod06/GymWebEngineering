@@ -8,8 +8,8 @@ session_start();
 <head>
 
     <title><?php echo $title ?></title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css?version=1">
+    <link rel="stylesheet" href="../style.css?version=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../myScripts.js"></script>
 

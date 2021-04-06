@@ -62,8 +62,8 @@ if (!isset($_SESSION['userID'])) {
                 </table>
             </div>
             <div class="actionsContainer">
-                <a href="addCustomer.php" class="actionLinks">Add Customer</a>
-                <a href="deleteCustomer.php" class="actionLinks">Delete Customer</a>
+                <a href="addCustomer.php" class="actionButtons">Add Customer</a>
+                <a href="deleteCustomer.php" class="actionButtons">Delete Customer</a>
             </div>
 
         </div>

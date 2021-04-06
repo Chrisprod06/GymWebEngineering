@@ -1,5 +1,5 @@
 <?php
-$title = 'Manage Customers | Gym';
+$title = 'Add Customer | Gym';
 include_once '../includes/header.inc.php';
 if (!isset($_SESSION['userID'])) {
     header('location: loginAdmin.php');
@@ -33,7 +33,7 @@ if (!isset($_SESSION['userID'])) {
                 <input class="addCustomerFormInput" type="email" name="email"></input><br>
                 <input class="addCustomerFormButton" type="submit" name="submitAddCustomer" value="Add customer"><br>
 
-                <a style="width : 95%" href="manageCustomers.php" class="actionLinks">Cancel</a>
+                <a  href="manageCustomers.php" class="actionLinks">Cancel</a>
 
             </form>
 
