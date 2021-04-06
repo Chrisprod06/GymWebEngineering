@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userID = (int)$_SESSION['userID'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
-    $adress = $_POST['address'];
+    $address = $_POST['address'];
     $email = $_POST['email'];
     $telephone = $_POST['telephone'];
     $currentPassword = $_POST['currentPassword'];
