@@ -37,7 +37,7 @@ if (!isset($_SESSION['userID'])) {
 
                     include_once '../includes/dbh.inc.php';
                     //sql query not working
-                    $sql = "SELECT classID,className,day,startTime,endTime,role,firstname,lastname,telephone,email FROM users NATURAL JOIN enrolledclasses NATURAL JOIN classes; ";
+                    $sql = "SELECT * FROM  users NATURAL JOIN enrolledclasses NATURAL JOIN classes where role=2 or role=3; ";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
 
@@ -53,7 +53,7 @@ if (!isset($_SESSION['userID'])) {
                             }
 
                             echo "<tr><td>" . $row["classID"] . "</td><td>" . $row["className"] . "</td><td>"
-                                . $row["day"] . "</td><td>" . $row['startTime'] . "</td><td>" . $row['endTime'] . "</td><td>" . $row['role'] . "</td><td>" . $row['firstname'] . "</td><td>". $row['lastname'] . "</td><td>". $row['telephone'] . "</td><td>" . $row['email'] . "</td></tr>";
+                                . $row["day"] . "</td><td>" . $row['startTime'] . "</td><td>" . $row['endTime'] . "</td><td>" . $role . "</td><td>" . $row['firstname'] . "</td><td>" . $row['lastname'] . "</td><td>" . $row['telephone'] . "</td><td>" . $row['email'] . "</td></tr>";
                         }
                         echo "</table>";
                     } else {
@@ -64,8 +64,7 @@ if (!isset($_SESSION['userID'])) {
                 </table>
             </div>
             <div class="actionsContainer">
-                <a href="addClass.php" class="actionLinks">Add Class</a>
-                
+                <a href="addClass.php" class="actionButtons">Add Class</a>
             </div>
         </div>
 

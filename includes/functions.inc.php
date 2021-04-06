@@ -151,8 +151,11 @@ function loginUser($conn, $email, $password,$role)
         exit();
     } else if ($checkPassword === true) {
         session_start();
+        $_SESSION['role'] = $uidExists['role'];
         $_SESSION['userID'] = $uidExists['userID'];
         $_SESSION['email']=$uidExists['email'];
+        $_SESSION['address'] = $uidExists['address'];
+        $_SESSION['telephone'] = $uidExists['telephone'];
         $_SESSION['firstname'] = $uidExists['firstname'];
         $_SESSION['lastname'] = $uidExists['lastname'];
         if ($uidExists['role'] == 1) {
