@@ -4,20 +4,20 @@
  include "config.php";
  if(isset($_POST['edit']))
  {
-    $id=$_SESSION['id'];
+    $id=$_SESSION['userID'];
     $firstname=$_POST['firstname'];
     $lastname=$_POST['lastname'];
     $telephone=$_POST['telephone'];
     $address=$_POST['address'];
     $email=$_POST['email'];
-    $select= "select * from users where id='$id'";
+    $select= "select * from users where userID='$userID'";
     $sql = mysqli_query($conn,$select);
     $row = mysqli_fetch_assoc($sql);
-    $res= $row['id'];
-    if($res === $id)
+    $res= $row['userID'];
+    if($res === $userID)
     {
    
-       $update = "update users set firstname='$firstname',lastname='$lastname',telephone='$telephone',address='$address',email='$email' where id='$id'";
+       $update = "update users set firstname='$firstname',lastname='$lastname',telephone='$telephone',address='$address',email='$email' where userID='$userID'";
        $sql2=mysqli_query($conn,$update);
 if($sql2)
        { 
@@ -27,13 +27,13 @@ if($sql2)
        else
        {
            /*sorry your profile is not update*/
-           header('location:Profile_edit_form.php');
+           header('location:profileEdit.php');
        }
     }
     else
     {
         /*sorry your id is not match*/
-        header('location:Profile_edit_form.php');
+        header('location:profileEdit.php');
     }
  }
 ?>
